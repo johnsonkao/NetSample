@@ -22,14 +22,15 @@ namespace JsonTest
             InitializeComponent();
         }
         private static string url = $"http://140.138.6.96/Env.json";
+        private static string err;
         private async void btnGet_Click(object sender, EventArgs e)
         {
             string err = "";
-            Environ env = GetEnv(ref err);   //方法1
-            //Environ env = await GetResponse(ref err);  //方法2
+             Environ env = await GetEnv();   //方法1
+            //Environ env = await GetResponse();  //方法2
             dataGridView1.DataSource = env.ENV;
         }
-        public static Environ GetEnv(ref string err)
+        public static async Task<Environ> GetEnv()
         {
             Environ env = new Environ();
             try
@@ -47,7 +48,7 @@ namespace JsonTest
             }
             return env;
         }
-        public static async Task<Environ> GetResponse(ref string err)
+        public static async Task<Environ> GetResponse( )
         {
             Environ env = null;
             try
