@@ -38,7 +38,9 @@ namespace JsonTest
                 using (WebClient webClient = new WebClient())
                 {
                     webClient.Encoding = Encoding.UTF8;
-                    string json = webClient.DownloadString(url);
+                    string json =  webClient.DownloadString(url);
+
+                    json = @"";
                     env = JsonConvert.DeserializeObject<Environ>(json);
                 }
             }
