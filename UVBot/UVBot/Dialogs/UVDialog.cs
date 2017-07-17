@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 namespace UVBot.Dialogs
 {
     //TODO 
-    [LuisModel("030ee797-9580-4416-a94f-bc2a42c4a210", "64d029664ec849258cbe4653f65eb645")]
+    [LuisModel("查一下", "查一下")]
     [Serializable]
     public class UVDialog : LuisDialog<Object>
     {
